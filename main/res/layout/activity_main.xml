@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="wipe_zone"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/time_circle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/time_circle" />
+
+    <com.example.timer.TimerView
+        android:id="@+id/timer"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        app:circleColor="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hours"
+        android:layout_width="67dp"
+        android:layout_height="52dp"
+        android:layout_alignStart="@+id/time_circle"
+        android:layout_toStartOf="@+id/minuts"
+        android:onClick="Hours_button"
+        android:text="00"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/minuts"
+        app:layout_constraintEnd_toStartOf="@+id/minuts"
+        app:layout_constraintTop_toTopOf="@+id/minuts" />
+
+    <TextView
+        android:id="@+id/minuts"
+        android:layout_width="67dp"
+        android:layout_height="52dp"
+        android:layout_toStartOf="@+id/seconds"
+        android:onClick="Minuts_button"
+        android:text=":00"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/time_circle"
+        app:layout_constraintEnd_toEndOf="@+id/time_circle"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="@+id/time_circle"
+        app:layout_constraintTop_toTopOf="@+id/time_circle"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/seconds"
+        android:layout_width="67dp"
+        android:layout_height="52dp"
+        android:layout_alignEnd="@+id/time_circle"
+        android:onClick="Seconds_button"
+        android:text=":00"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/minuts"
+        app:layout_constraintStart_toEndOf="@+id/minuts"
+        app:layout_constraintTop_toTopOf="@+id/minuts" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="BottomAppBar" />
+
+
+    <ImageView
+        android:id="@+id/down_but"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bottomAppBar2"
+        app:layout_constraintTop_toTopOf="@+id/bottomAppBar2"
+        app:srcCompat="@drawable/minus_but" />
+
+    <ImageView
+        android:id="@+id/up_but"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/down_but"
+        app:layout_constraintEnd_toStartOf="@+id/down_but"
+        app:srcCompat="@drawable/plus_but" />
+
+    <ImageView
+        android:id="@+id/pause_but"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:alpha="0"
+        android:background="@drawable/circle"
+        android:rotation="-90"
+        app:srcCompat="@drawable/pause_but"
+        android:layout_marginStart="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/down_but"
+        app:layout_constraintStart_toEndOf="@+id/down_but"
+        app:layout_constraintTop_toTopOf="@+id/down_but"
+        android:layout_marginBottom="25dp"  />
+
+    <ImageView
+        android:id="@+id/start_but"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle"
+        android:onClick="Start_button"
+        app:srcCompat="@drawable/start_but"
+        android:layout_marginStart="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/down_but"
+        app:layout_constraintStart_toEndOf="@+id/down_but"
+        app:layout_constraintTop_toTopOf="@+id/down_but"
+        android:layout_marginBottom="25dp" />
+
+    <ImageView
+        android:id="@+id/clear_timer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="25dp"
+        android:onClick="Clear_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stop"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
